@@ -18,11 +18,14 @@ Where customer_id=10024
       <button onclick="execute()">Run</button>
     </div>
 
-    <script src="ace-src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <!--script src="ace-src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js" type="text/javascript" charset="utf-8"></script>
+    
     <script>
         var editor = ace.edit("editor");
         editor.setTheme("ace/theme/textmate");
         editor.session.setMode("ace/mode/sql");
+        editor.on("blur", blured);
     </script>
 
  

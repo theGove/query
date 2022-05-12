@@ -1,12 +1,13 @@
 let token="https://"
 async function execute() {
-
+    
     if(token.substr(0,8)==="https://"){
         token=prompt("Replace this URL with the read/write token from data.world.  To find the token, log in to your account at data.workld then go to the URL below and ", "https://data.world/settings/advanced");
     }
     if(token.substr(0,8)==="https://" || token===""){return}
 
     const editor = ace.edit("editor")
+    console.log("editor:",editor)
     const options = {
         'authorization': 'Bearer ' + token,
       };
@@ -57,7 +58,7 @@ async function execute() {
             result.innerHTML=table.join("")
 
         }catch(e){
-            result.innerHTML=data
+            result.innerHTML="<pre>" + data + "</pre>"
         }
 }
 
@@ -78,4 +79,8 @@ async function execute_post() {
       });
     let data = await response.text();
    //console.log(data);
+}
+
+function blured(){
+    console.log('blured')
 }
